@@ -13,8 +13,8 @@ runs:
   using: "composite"
   steps:
     #- run: echo Hello Man ${{ inputs.who-to-greet }}
-     - run: ${GITHUB_ACTION_PATH//\\//}/scripts/good_morning.sh
-       shell: bash
+     - run: ${GITHUB_ACTION_PATH//\\//}/good_morning.sh
+       shell: C:\Windows\System32\bash.exe" -c "$(wslpath '%1')"
    # - id: random-number-generator
     #  run: echo "::set-output name=random-id::$(echo $RANDOM)"
    #   shell: bash
