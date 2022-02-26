@@ -14,8 +14,8 @@ runs:
   steps:
     #- run: echo Hello Man ${{ inputs.who-to-greet }}
      #- run: ${GITHUB_ACTION_PATH//\\//}/good_morning.sh
-      - run: echo Hello2
-        shell: wsl -c "$(wslpath '%1')"
+      - run: echo Hello4
+        shell: powershell
    # - id: random-number-generator
     #  run: echo "::set-output name=random-id::$(echo $RANDOM)"
    #   shell: bash
