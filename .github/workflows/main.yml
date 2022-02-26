@@ -6,6 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: foo
-        uses: githubNinja/github-actions@v1
+        uses: githubNinja/github-actions@v1.0.1
         with:
              who-to-greet: 'KranD'
