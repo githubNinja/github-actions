@@ -1,3 +1,4 @@
+name: "Run worflow based on Action"
 on:
   push:
     branches:

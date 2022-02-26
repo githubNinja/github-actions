@@ -12,19 +12,18 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: |
-         echo Hello ${{ inputs.who-to-greet }}
-         echo ${{ github.action_path }}
-         ls -lha
-         cd scripts
-         chmod +x *.sh
-         ${GITHUB_ACTION_PATH//\\//}/scripts/good_morning.sh
-
+    - run: echo Hello Man ${{ inputs.who-to-greet }}
       shell: bash
    # - id: random-number-generator
     #  run: echo "::set-output name=random-id::$(echo $RANDOM)"
    #   shell: bash
     # new version
+    # echo Hello ${{ inputs.who-to-greet }}
+     # echo ${{ github.action_path }}
+      #ls -lha
+      #cd scripts
+      #chmod +x *.sh
+      # ${GITHUB_ACTION_PATH//\\//}/scripts/good_morning.sh
 
 ## echo {{ github.workspace }}
 # echo "${{ github.action_path }}" >> $GITHUB_PATH
