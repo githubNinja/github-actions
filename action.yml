@@ -13,6 +13,7 @@ runs:
   using: "composite"
   steps:
     - run: |
+         echo {{ github.workspace }}
          echo Hello ${{ inputs.who-to-greet }}.
          echo "${{ github.action_path }}" >> $GITHUB_PATH
         ./good_morning.sh
