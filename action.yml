@@ -12,8 +12,9 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo Hello Man ${{ inputs.who-to-greet }}
-      shell: bash
+    #- run: echo Hello Man ${{ inputs.who-to-greet }}
+     - run: ${GITHUB_ACTION_PATH//\\//}/scripts/good_morning.sh
+       shell: bash
    # - id: random-number-generator
     #  run: echo "::set-output name=random-id::$(echo $RANDOM)"
    #   shell: bash
