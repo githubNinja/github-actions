@@ -12,6 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: foo
-        uses: githubNinja/github-actions@v1.0.8
+        uses: githubNinja/github-actions@v1.0.9
         with:
              who-to-greet: 'KranD'
