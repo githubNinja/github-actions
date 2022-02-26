@@ -14,9 +14,11 @@ runs:
   steps:
     - run: |
          echo Hello ${{ inputs.who-to-greet }}
-         chmod +x /scripts/*.sh
          ls -lha
-         ./scripts/good_morning.sh
+         cd scripts
+         chmod +x *.sh
+         ls -lha
+
       shell: bash
    # - id: random-number-generator
     #  run: echo "::set-output name=random-id::$(echo $RANDOM)"
@@ -24,3 +26,4 @@ runs:
 
 ## echo {{ github.workspace }}
 # echo "${{ github.action_path }}" >> $GITHUB_PATH
+# ./scripts/good_morning.sh
