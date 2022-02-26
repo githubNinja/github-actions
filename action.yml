@@ -14,10 +14,11 @@ runs:
   steps:
     - run: |
          echo Hello ${{ inputs.who-to-greet }}
+         echo ${{ github.action_path }}
          ls -lha
          cd scripts
          chmod +x *.sh
-         ls -lha
+         ${GITHUB_ACTION_PATH//\\//}/scripts/good_morning.sh
 
       shell: bash
    # - id: random-number-generator
