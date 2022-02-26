@@ -13,10 +13,14 @@ runs:
   using: "composite"
   steps:
     - run: |
-         echo {{ github.workspace }}
-         echo Hello ${{ inputs.who-to-greet }}.
-         echo "${{ github.action_path }}" >> $GITHUB_PATH
+         echo Hello ${{ inputs.who-to-greet }}
+         chmod +x /scripts/*.sh
+         ls -lha
+         ./scripts/good_morning.sh
       shell: bash
    # - id: random-number-generator
     #  run: echo "::set-output name=random-id::$(echo $RANDOM)"
    #   shell: bash
+
+## echo {{ github.workspace }}
+# echo "${{ github.action_path }}" >> $GITHUB_PATH
