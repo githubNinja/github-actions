@@ -8,4 +8,4 @@ jobs:
       - id: foo
         uses: githubNinja/github-actions@v1
         with:
-             who-to-great: 'KranD'
+             who-to-greet: 'KranD'
