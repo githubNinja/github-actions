@@ -1,0 +1,16 @@
+name: "Workflow in Linux Runner"
+on:
+  push:
+    branches:
+      - main
+jobs:
+  linux-runner-workflow:
+    runs-on: [ linux-runner, MyLinuxRunner ]
+    name: linux-runner-starter
+    steps:
+      - uses: actions/checkout@v2
+      - id: foo
+        run: |
+          echo "this is from linux runner"
+          ls
+

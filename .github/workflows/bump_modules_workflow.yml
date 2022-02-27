@@ -1,0 +1,17 @@
+name: "Run worflow based on Action"
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - v*
+jobs:
+  hello_world:
+    runs-on: [ Kran-SelfHosted, self-hosted ]
+    name: Job-Greeting
+    steps:
+      - uses: actions/checkout@v2
+      - id: foo
+        uses: githubNinja/github-actions@v1.0.10
+        with:
+             who-to-greet: 'KranD'
