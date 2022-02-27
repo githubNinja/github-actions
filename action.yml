@@ -1,4 +1,7 @@
-name: 'Hello World'
+#Sample PR let's see if this works
+# And thisLine
+
+name: 'Hello World PR'
 description: 'Greet someone'
 inputs:
   who-to-greet:  # id of input
