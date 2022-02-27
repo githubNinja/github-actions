@@ -5,12 +5,12 @@ on:
       - main
 jobs:
   linux-runner-workflow:
-    runs-on: [ linux-runner, MyLinuxRunner ]
+    runs-on: [ linux_runner,Linux, self-hosted ]
     name: linux-runner-starter
     steps:
       - uses: actions/checkout@v2
       - id: foo
         run: |
-          echo "this is from linux runner"
+          echo "this is from linux runner1"
           ls
 
