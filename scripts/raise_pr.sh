@@ -4,7 +4,8 @@ set -e
 MODULE_TO_BUMP=$1
 VERSION_TO_BUMP=$2
 GITHUB_ACCESS_TOKEN=$3
-echo Input1 ${MODULE_TO_BUMP}
+export PATH=$PATH:$JAVA_HOME/bin
+echo "version::" ${java -version}
 echo Input1 ${MODULE_TO_BUMP}
 echo Input2 ${VERSION_TO_BUMP}
 echo Input3 ${GITHUB_ACCESS_TOKEN}
