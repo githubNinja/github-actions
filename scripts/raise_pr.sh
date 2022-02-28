@@ -4,8 +4,8 @@ set -e
 MODULE_TO_BUMP=$1
 VERSION_TO_BUMP=$2
 GITHUB_ACCESS_TOKEN=$3
-echo "Exporting path:::"
-export JAVA_HOME="/c/Program Files/Amazon Corretto/jdk1.8.0_252/bin"
+echo "Exporting path New:::"
+#export JAVA_HOME="/c/Program Files/Amazon Corretto/jdk1.8.0_252/bin"
 echo "Exporting path2:::" $JAVA_HOME
 
 #export PATH=$PATH:$JAVA_HOME/bin
