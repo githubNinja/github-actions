@@ -1,0 +1,35 @@
+name: 'Bump a dependency module'
+description: 'This will bump a maven module dependency and raise a PR'
+inputs:
+  module_to_bump:
+    description: 'Bump the module, example- name of the module'
+    required: true
+    default: ''
+  version_to_bump:
+      description: 'Version of the module to bump'
+      required: true
+      default: ''
+outputs:
+  PR:
+    description: "Pull Req id"
+    value: "PR-123"
+runs:
+  using: "composite"
+  steps:
+      - run: |
+          echo "Input1:" ${{ inputs.module_to_bump }}
+          echo "Input2:" ${{ inputs.version_to_bump }}
+          git clone https://github.com/githubNinja/${{ inputs.module_to_bump }}.git
+          mvn versions:set -DnewVersion=${{ inputs.version_to_bump }
+          git checkout -b bump-${{ inputs.module_to_bump }}
+          git add pom.xml
+          git commit -m "chore:bump ${{ inputs.module_to_bump }}"
+          #git push origin bump-${{ inputs.module_to_bump }}
+          git push origin githubNinja-patch-2
+          curl  -X POST -H "Content-Type: application/vnd.github.v3+json" -H "Accept:application/vnd.github.v3+json"  -H 'Authorization: token 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' https://api.github.com/repos/githubNinja/github-actions/pulls -d '{ "title": "'Bump::github-actions::1.0.1-SNAPSHOT'", "body": "Auto Bump Pull Request.", "head": "githubNinja-patch-2", "base": "main" }'
+          #git pull-request -f "Bump::${{ inputs.module_to_bump }::${{ version_to_bump }" -b master
+          #echo Hello ${{ inputs.who-to-greet }}
+          ls
+          echo executing the bash script awesome !!
+          #bash ./good_morning.sh
+        shell: bash
