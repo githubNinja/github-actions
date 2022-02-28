@@ -24,6 +24,6 @@ runs:
       env:
         GITHUB_TOKEN: ${{ inputs.github_access_token }}
       shell: bash
-      run: .${{ github.action_path }}/scripts/raise_pr.sh ${{ inputs.module_to_bump }} ${{ inputs.version_to_bump }}  ${{ inputs.github_access_token }}
+      run: ${{ github.action_path }}/scripts/raise_pr.sh ${{ inputs.module_to_bump }} ${{ inputs.version_to_bump }}  ${{ inputs.github_access_token }}
 
 
