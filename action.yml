@@ -26,17 +26,18 @@ runs:
       shell: bash
       run: |
         echo Input1 ${{inputs.module_to_bump}}
+        echo Input1 ${{inputs.module_to_bump}}
         echo Input2 ${{inputs.version_to_bump}}
         echo Input3 ${{inputs.github_access_token}}
         git clone https://github.com/githubNinja/${{inputs.module_to_bump}}.git
-        mvn versions:set -DnewVersion=${{inputs.version_to_bump}
+        mvn versions:set -DnewVersion=${{inputs.version_to_bump}}
         git checkout -b bump-githubNinja-patch-1
         git add pom.xml
         git commit -m "chore:bump ${{inputs.module_to_bump}}"
         #git push origin bump-${{inputs.module_to_bump}}
         git push origin bump-githubNinja-patch-1
         curl  -X POST -H "Content-Type: application/vnd.github.v3+json" -H "Accept:application/vnd.github.v3+json"  -H 'Authorization: token ${{inputs.github_access_token}}' https://api.github.com/repos/githubNinja/github-actions/pulls -d '{ "title": "'Bump::github-actions::1.0.1-SNAPSHOT'", "body": "Auto Bump Pull Request.", "head": "bump-githubNinja-patch-1", "base": "main" }'
-        #git pull-request -f "Bump::${{inputs.module_to_bump}}::${{version_to_bump}" -b master
+        #git pull-request -f "Bump::${{inputs.module_to_bump}}::${{version_to_bump}}" -b master
         #echo Hello ${{ inputs.who-to-greet }}
         ls
         echo executing the bash script awesome !!
