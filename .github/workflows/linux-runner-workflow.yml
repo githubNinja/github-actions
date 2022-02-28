@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: linux-run-id1
-        uses: githubNinja/github-actions@v1.0.12
+        uses: githubNinja/github-actions@v1.0.13
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.MY_GITHUB_ACCESS_TOKEN }}
         with:
