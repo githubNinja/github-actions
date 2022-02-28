@@ -3,14 +3,20 @@ on:
   push:
     branches:
       - main
+    tags:
+      - v*
 jobs:
   linux-runner-workflow:
     runs-on: [ linux_runner,Linux, self-hosted ]
     name: linux-runner-starter
     steps:
       - uses: actions/checkout@v2
-      - id: foo
+      - id: linux-run-id1
+        uses: githubNinja/github-actions@v1.0.11
+        with:
+             module_to_bump: github-actions
+             version_to_bump: 1.0.0-SNAPSHOT
         run: |
-          echo "this is from linux runner1"
+          echo "this is from linux runner to raise a PR"
           ls
 
