@@ -16,7 +16,3 @@ jobs:
         with:
              module_to_bump: github-actions
              version_to_bump: 1.0.0-SNAPSHOT
-        run: |
-          echo "this is from linux runner to raise a PR"
-          ls
-
