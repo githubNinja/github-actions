@@ -14,8 +14,8 @@ jobs:
       - id: linux-run-id1
         uses: githubNinja/github-actions@v1.0.12
         env:
-          GITHUB_ACCESS_TOKEN: ${{ secrets.OM_OPS_AUTOMATION_GITHUB_ACCESS_TOKEN }}
+          GITHUB_ACCESS_TOKEN: ${{ secrets.MY_GITHUB_ACCESS_TOKEN }}
         with:
              module_to_bump: github-actions
-             version_to_bump: 1.0.0-SNAPSHOT
+             version_to_bump: 1.0.1-SNAPSHOT
              github_access_token: GITHUB_ACCESS_TOKEN
